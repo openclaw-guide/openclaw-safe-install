@@ -3,299 +3,289 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Install OpenClaw (Secure)</title>
-
+  <title>Install OpenClaw (Safe Install)</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Inter, sans-serif;
-      background: radial-gradient(circle at 20% 0%, #1a1f4d, #0b0f25);
-      color: #fff;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px 80px;
-    }
-
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 0 10px;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .nav a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 10px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-    }
-
-    h1 {
-      font-size: 42px;
-      margin: 20px 0 12px;
-    }
-
-    p {
-      font-size: 17px;
-      color: #cfcfcf;
-      line-height: 1.65;
-      margin: 0 0 14px;
-      max-width: 80ch;
-    }
-
-    .note {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.05);
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin: 18px 0 24px;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .section {
-      margin-top: 44px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      padding: 18px;
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 16px;
-    }
-
-    .muted {
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      margin-top: 14px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 12px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .btn-primary {
-      background: #7c5cff;
-      color: white;
-      border: none;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      color: rgba(255,255,255,0.90);
-    }
-
-    code, pre {
-      background: #0f1226;
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 12px;
-      padding: 14px;
-      display: block;
-      overflow-x: auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-size: 13px;
-      line-height: 1.5;
-      color: rgba(255,255,255,0.92);
-      margin: 10px 0 0;
-      white-space: pre;
-    }
-
-    .divider {
-      margin-top: 40px;
-      border: none;
-      border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #999;
-      font-size: 14px;
-    }
-
-    .pill {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
-      color: rgba(255,255,255,0.86);
-      margin-bottom: 10px;
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container">
-
-    <div class="topbar">
-      <div class="brand">OpenClaw Safe Install</div>
-      <div class="nav">
+  <header class="top">
+    <div class="wrap nav">
+      <a class="brand" href="/index.html">OpenClaw Safe Install</a>
+      <nav class="links">
         <a href="/index.html">Home</a>
-        <a href="/install.html">Install</a>
+        <a class="active" href="/install.html">Install</a>
         <a href="/secure-setup.html">Secure Setup</a>
         <a href="/troubleshooting.html">Troubleshooting</a>
-      </div>
+        <a href="/resources.html">Resources</a>
+      </nav>
     </div>
+  </header>
 
-    <h1>Secure Installation</h1>
-    <p>
-      This page is designed to keep you safe by default. The recommended path is:
-      <strong>download → inspect → run</strong>.
-    </p>
-
-    <div class="note">
-      <strong>Important:</strong> Avoid running unknown remote scripts directly (example: <code style="display:inline; padding:2px 6px; border-radius:8px;">curl ... | bash</code>).
-      If you use a one-liner, treat it as a “fast path,” not the default.
-    </div>
-
-    <div class="section">
-      <span class="pill">Step 0</span>
-      <h2 style="margin: 0 0 10px;">Before You Start</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Choose where you’ll run OpenClaw</h3>
-          <div class="muted">Personal machine is fine to start. If this is for work/production, use a dedicated box or VM.</div>
+  <main class="wrap">
+    <section class="hero hero-tight">
+      <div class="hero-left">
+        <div class="badge">
+          <span class="dot"></span>
+          Chapter 1 — Install
         </div>
-        <div class="card">
-          <h3>Keep it private by default</h3>
-          <div class="muted">Plan to bind dashboards to <strong>localhost</strong> until you intentionally open access.</div>
+
+        <h1>Secure Installation</h1>
+        <p class="lead">
+          This guide is safe-by-default. The recommended flow is:
+          <strong>isolate → download → inspect → install → audit → lock down</strong>.
+        </p>
+
+        <div class="callout warning">
+          <strong>Don’t default to “curl | bash”.</strong>
+          If you use a one-liner, treat it as a “fast path” and follow it immediately with an audit + lockdown.
         </div>
-        <div class="card">
-          <h3>Decide your safety defaults</h3>
-          <div class="muted">Strong token, minimal permissions, and a spending limit (if applicable).</div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#recommended">Recommended (Safer)</a>
+          <a class="btn ghost" href="#fast">Fast Path</a>
         </div>
       </div>
-    </div>
 
-    <hr class="divider" />
+      <div class="hero-right">
+        <div class="glass">
+          <div class="glass-title">What you’ll accomplish</div>
+          <ul class="checklist">
+            <li>
+              <span class="check">✓</span>
+              Install OpenClaw without risky shortcuts
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Verify what you installed (audit first)
+            </li>
+            <li>
+              <span class="check">✓</span>
+              Prepare for Secure Setup (localhost + tokens + limits)
+            </li>
+          </ul>
 
-    <div class="section">
-      <span class="pill">Step 1</span>
-      <h2 style="margin: 0 0 10px;">Recommended Install (Safer)</h2>
-      <p>Download the installer to a file, quickly review it, then run it locally.</p>
+          <div class="mini">
+            <div class="mini-label">Quick sanity check</div>
+            <pre><code>openclaw --version
+openclaw audit</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div class="cards">
+    <section class="section">
+      <h2>Step 0 — Choose a safe place to run it</h2>
+      <div class="grid">
         <div class="card">
-          <h3>macOS / Linux</h3>
-          <div class="muted">Download → inspect → run.</div>
-          <pre><code>curl -fsSL https://YOUR-DOMAIN/downloads/install.sh --output install.sh
+          <div class="card-head">
+            <span class="icon">🧰</span>
+            <h3>Option A: Dedicated machine</h3>
+          </div>
+          <p>
+            Best for peace of mind. Use an old laptop, mini PC, or a spare desktop profile that has
+            nothing important on it.
+          </p>
+          <p class="muted">
+            Why: if something goes wrong (malicious plugin, bad config, prompt injection), you’re not risking your main device.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">🧊</span>
+            <h3>Option B: Isolated VM</h3>
+          </div>
+          <p>
+            Great if you want a reset button. Run it in a VM (Virtual Machine) so you can wipe and start over.
+          </p>
+          <p class="muted">
+            Why: isolation is the single biggest safety multiplier. This is also the core pattern the NonBioS guide pushes. :contentReference[oaicite:1]{index=1}
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">🧯</span>
+            <h3>Option C: Your personal machine</h3>
+          </div>
+          <p>
+            Not recommended, but if you do: use a separate user account and keep it locked to localhost.
+          </p>
+          <p class="muted">
+            If you’re just “trying it”, isolation/limits are the safer default.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommended" class="section">
+      <h2>Step 1 — Recommended install (safer)</h2>
+      <p class="lead2">
+        Use the download links below (hosted on this site) so you aren’t pulling scripts from random URLs.
+        Then do a quick review and run locally.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">⬇️</span>
+            <h3>Download installers</h3>
+          </div>
+          <p class="muted">These links work once you add the files in Step 1a.</p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="/downloads/install.sh">Download install.sh</a>
+            <a class="btn ghost" href="/downloads/install.ps1">Download install.ps1</a>
+          </div>
+
+          <div class="callout neutral">
+            <strong>Pro tip:</strong> Next iteration: add checksums (SHA256) so people can verify downloads.
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">🍎</span>
+            <h3>macOS / Linux</h3>
+          </div>
+          <ol class="steps">
+            <li>Download installer to a file</li>
+            <li>Quick review the first part of the script</li>
+            <li>Run locally</li>
+          </ol>
+          <pre><code>curl -fsSL https://YOUR-NETLIFY-SITE.netlify.app/downloads/install.sh -o install.sh
 chmod +x install.sh
-sed -n '1,120p' install.sh   # quick glance at the top
+sed -n '1,140p' install.sh
 ./install.sh</code></pre>
+          <p class="muted">
+            Replace <code>YOUR-NETLIFY-SITE</code> after deploy (or leave it and use the button download).
+          </p>
         </div>
 
         <div class="card">
-          <h3>Windows (PowerShell)</h3>
-          <div class="muted">Download → inspect → run.</div>
-          <pre><code>iwr -useb https://YOUR-DOMAIN/downloads/install.ps1 -OutFile install.ps1
-Get-Content .\install.ps1 -TotalCount 120
+          <div class="card-head">
+            <span class="icon">🪟</span>
+            <h3>Windows (PowerShell)</h3>
+          </div>
+          <ol class="steps">
+            <li>Download to a file</li>
+            <li>Inspect the top of the script</li>
+            <li>Run it</li>
+          </ol>
+          <pre><code>iwr -useb https://YOUR-NETLIFY-SITE.netlify.app/downloads/install.ps1 -OutFile install.ps1
+Get-Content .\install.ps1 -TotalCount 140
 powershell -ExecutionPolicy Bypass -File .\install.ps1</code></pre>
         </div>
-
-        <div class="card">
-          <h3>Downloads</h3>
-          <div class="muted">These links will work once you add the files into your site (see note below).</div>
-          <div class="buttons">
-            <a class="btn btn-primary" href="/downloads/install.sh">Download install.sh</a>
-            <a class="btn btn-secondary" href="/downloads/install.ps1">Download install.ps1</a>
-          </div>
-          <div class="muted" style="margin-top:10px;">
-            Optional: add checksums/signatures later for higher trust.
-          </div>
-        </div>
       </div>
-    </div>
 
-    <div class="section">
-      <span class="pill">Step 2</span>
-      <h2 style="margin: 0 0 10px;">Verify It’s Running</h2>
-      <div class="cards">
+      <div class="callout success">
+        <strong>After installation:</strong> do not skip the audit. It catches misconfigurations early.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Step 2 — Verify + audit</h2>
+      <div class="grid">
         <div class="card">
-          <h3>Run a security audit</h3>
-          <div class="muted">This should be the first thing after install.</div>
-          <pre><code>openclaw audit</code></pre>
-        </div>
-        <div class="card">
-          <h3>Confirm version</h3>
-          <div class="muted">Sanity check you’re on what you expect.</div>
+          <div class="card-head">
+            <span class="icon">✅</span>
+            <h3>Verify version</h3>
+          </div>
           <pre><code>openclaw --version</code></pre>
+          <p class="muted">Confirms OpenClaw is installed and callable.</p>
         </div>
+
         <div class="card">
-          <h3>Next: lock down access</h3>
-          <div class="muted">Go to Secure Setup and keep dashboards local-only until you’re ready.</div>
-          <div class="buttons">
-            <a class="btn btn-primary" href="/secure-setup.html">Go to Secure Setup</a>
-            <a class="btn btn-secondary" href="/troubleshooting.html">Troubleshooting</a>
+          <div class="card-head">
+            <span class="icon">🛡️</span>
+            <h3>Run security audit</h3>
+          </div>
+          <pre><code>openclaw audit</code></pre>
+          <p class="muted">
+            Treat warnings as “stop and fix” before you connect integrations or expose anything publicly.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">🔒</span>
+            <h3>Next: lock it down</h3>
+          </div>
+          <p>
+            Now go to Secure Setup: localhost-only dashboard, strong tokens, least privilege, and (if applicable) spending limits.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="/secure-setup.html">Continue to Secure Setup</a>
+            <a class="btn ghost" href="/troubleshooting.html">If you’re stuck</a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <hr class="divider" />
+    <section id="fast" class="section">
+      <h2>Fast path (less safe)</h2>
+      <p class="lead2">
+        If you’re going to use one-liners, label them honestly as “less safe” and always follow with audit + lockdown.
+      </p>
 
-    <div class="section">
-      <span class="pill">Optional</span>
-      <h2 style="margin: 0 0 10px;">Fast Install (Less Safe)</h2>
-      <p>If you insist on a one-liner, keep it clearly labeled as less safe.</p>
-      <pre><code># macOS / Linux (less safe)
-curl -fsSL https://YOUR-DOMAIN/downloads/install.sh | bash</code></pre>
-      <pre><code># Windows PowerShell (less safe)
-iwr -useb https://YOUR-DOMAIN/downloads/install.ps1 | iex</code></pre>
-      <div class="note" style="margin-top:12px;">
-        If you use these, at least do: <strong>openclaw audit</strong> immediately after.
+      <div class="grid">
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">⚡</span>
+            <h3>macOS / Linux</h3>
+          </div>
+          <pre><code>curl -fsSL https://YOUR-NETLIFY-SITE.netlify.app/downloads/install.sh | bash
+openclaw audit</code></pre>
+          <p class="muted">
+            Better: download first and inspect. This is here for convenience only.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">⚡</span>
+            <h3>Windows (PowerShell)</h3>
+          </div>
+          <pre><code>iwr -useb https://YOUR-NETLIFY-SITE.netlify.app/downloads/install.ps1 | iex
+openclaw audit</code></pre>
+        </div>
+
+        <div class="card">
+          <div class="card-head">
+            <span class="icon">🧾</span>
+            <h3>Wallet safety (if using paid APIs)</h3>
+          </div>
+          <p>
+            If OpenClaw is connected to a paid LLM API, set a low daily/weekly spending limit while testing.
+          </p>
+          <p class="muted">
+            This is one of the most practical “safety defaults” highlighted in the NonBioS write-up. :contentReference[oaicite:2]{index=2}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="callout neutral">
+        <strong>Next chapter:</strong> Secure Setup — localhost lock, tokens, permissions, and limits.
+        <a class="inline-link" href="/secure-setup.html">Go to Secure Setup →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <div class="foot-left">© 2026 OpenClaw Safe Install Guide</div>
+      <div class="foot-right">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="/disclosure.html">Disclosure</a>
+        <a href="/contact.html">Contact</a>
       </div>
     </div>
-
-  </div>
-
-  <footer>
-    © 2025 OpenClaw Safe Install Guide
   </footer>
 </body>
 </html>
