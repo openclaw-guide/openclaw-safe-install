@@ -1,45 +1,301 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenClaw Safe Install | OpenClaw Safe Install</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="assets/favicon.svg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Install OpenClaw (Secure)</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: radial-gradient(circle at 20% 0%, #1a1f4d, #0b0f25);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0 10px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: 20px 0 12px;
+    }
+
+    p {
+      font-size: 17px;
+      color: #cfcfcf;
+      line-height: 1.65;
+      margin: 0 0 14px;
+      max-width: 80ch;
+    }
+
+    .note {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 18px 0 24px;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .section {
+      margin-top: 44px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .muted {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 14px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 16px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .btn-primary {
+      background: #7c5cff;
+      color: white;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.90);
+    }
+
+    code, pre {
+      background: #0f1226;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 12px;
+      padding: 14px;
+      display: block;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.92);
+      margin: 10px 0 0;
+      white-space: pre;
+    }
+
+    .divider {
+      margin-top: 40px;
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.86);
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
+
 <body>
-<header>
-<div class="container">
-<h2>OpenClaw Safe Install</h2>
-<nav>
-<a href="index.html">Home</a>
-<a href="install.html">Install</a>
-<a href="secure-setup.html">Secure Setup</a>
-<a href="troubleshooting.html">Troubleshooting</a>
-<a href="resources.html">Resources</a>
-<a href="about.html">About</a>
-</nav>
-</div>
-</header>
-<div class="container">
+  <div class="container">
 
-<h1>Install OpenClaw</h1>
-<h2>Mac / Linux</h2>
-<div class="code"><pre>curl -fsSL https://openclaw.ai/install.sh | bash</pre></div>
-<h2>Windows (PowerShell)</h2>
-<div class="code"><pre>iwr -useb https://openclaw.ai/install.ps1 | iex</pre></div>
-<h2>Run Setup</h2>
-<div class="code"><pre>openclaw onboard --install-daemon</pre></div>
+    <div class="topbar">
+      <div class="brand">OpenClaw Safe Install</div>
+      <div class="nav">
+        <a href="/index.html">Home</a>
+        <a href="/install.html">Install</a>
+        <a href="/secure-setup.html">Secure Setup</a>
+        <a href="/troubleshooting.html">Troubleshooting</a>
+      </div>
+    </div>
 
-</div>
-<footer>
-<div class="container">
-<a href="privacy.html">Privacy</a> |
-<a href="terms.html">Terms</a> |
-<a href="disclosure.html">Disclosure</a> |
-<a href="contact.html">Contact</a>
-<p style="font-size:12px">Educational content only.</p>
-</div>
-</footer>
+    <h1>Secure Installation</h1>
+    <p>
+      This page is designed to keep you safe by default. The recommended path is:
+      <strong>download → inspect → run</strong>.
+    </p>
+
+    <div class="note">
+      <strong>Important:</strong> Avoid running unknown remote scripts directly (example: <code style="display:inline; padding:2px 6px; border-radius:8px;">curl ... | bash</code>).
+      If you use a one-liner, treat it as a “fast path,” not the default.
+    </div>
+
+    <div class="section">
+      <span class="pill">Step 0</span>
+      <h2 style="margin: 0 0 10px;">Before You Start</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Choose where you’ll run OpenClaw</h3>
+          <div class="muted">Personal machine is fine to start. If this is for work/production, use a dedicated box or VM.</div>
+        </div>
+        <div class="card">
+          <h3>Keep it private by default</h3>
+          <div class="muted">Plan to bind dashboards to <strong>localhost</strong> until you intentionally open access.</div>
+        </div>
+        <div class="card">
+          <h3>Decide your safety defaults</h3>
+          <div class="muted">Strong token, minimal permissions, and a spending limit (if applicable).</div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <span class="pill">Step 1</span>
+      <h2 style="margin: 0 0 10px;">Recommended Install (Safer)</h2>
+      <p>Download the installer to a file, quickly review it, then run it locally.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>macOS / Linux</h3>
+          <div class="muted">Download → inspect → run.</div>
+          <pre><code>curl -fsSL https://YOUR-DOMAIN/downloads/install.sh --output install.sh
+chmod +x install.sh
+sed -n '1,120p' install.sh   # quick glance at the top
+./install.sh</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Windows (PowerShell)</h3>
+          <div class="muted">Download → inspect → run.</div>
+          <pre><code>iwr -useb https://YOUR-DOMAIN/downloads/install.ps1 -OutFile install.ps1
+Get-Content .\install.ps1 -TotalCount 120
+powershell -ExecutionPolicy Bypass -File .\install.ps1</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>Downloads</h3>
+          <div class="muted">These links will work once you add the files into your site (see note below).</div>
+          <div class="buttons">
+            <a class="btn btn-primary" href="/downloads/install.sh">Download install.sh</a>
+            <a class="btn btn-secondary" href="/downloads/install.ps1">Download install.ps1</a>
+          </div>
+          <div class="muted" style="margin-top:10px;">
+            Optional: add checksums/signatures later for higher trust.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="pill">Step 2</span>
+      <h2 style="margin: 0 0 10px;">Verify It’s Running</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Run a security audit</h3>
+          <div class="muted">This should be the first thing after install.</div>
+          <pre><code>openclaw audit</code></pre>
+        </div>
+        <div class="card">
+          <h3>Confirm version</h3>
+          <div class="muted">Sanity check you’re on what you expect.</div>
+          <pre><code>openclaw --version</code></pre>
+        </div>
+        <div class="card">
+          <h3>Next: lock down access</h3>
+          <div class="muted">Go to Secure Setup and keep dashboards local-only until you’re ready.</div>
+          <div class="buttons">
+            <a class="btn btn-primary" href="/secure-setup.html">Go to Secure Setup</a>
+            <a class="btn btn-secondary" href="/troubleshooting.html">Troubleshooting</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <span class="pill">Optional</span>
+      <h2 style="margin: 0 0 10px;">Fast Install (Less Safe)</h2>
+      <p>If you insist on a one-liner, keep it clearly labeled as less safe.</p>
+      <pre><code># macOS / Linux (less safe)
+curl -fsSL https://YOUR-DOMAIN/downloads/install.sh | bash</code></pre>
+      <pre><code># Windows PowerShell (less safe)
+iwr -useb https://YOUR-DOMAIN/downloads/install.ps1 | iex</code></pre>
+      <div class="note" style="margin-top:12px;">
+        If you use these, at least do: <strong>openclaw audit</strong> immediately after.
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2025 OpenClaw Safe Install Guide
+  </footer>
 </body>
 </html>
